@@ -99,44 +99,32 @@ Because of the way nano-emacs is set up, you need to set these variables /before
 
 - **[nano.el](./nano.el)** (optional)
 
-  > This module is mostly used to test nano emacs locally. Its content
-  > is supposed to be merged into an existing emacs configuration. See
-  > [Quick test](#Quick-test) section above.
+  > This module is mostly used to test nano emacs locally. Its content is supposed to be merged into an existing emacs configuration. See [Quick test](#Quick-test) section above.
 
 #### Mandatory
 
 - **[nano-base-colors.el](./nano-base-colors.el)**
 
-  > This module defines the fundamental colors of nano theme.
-  > If your Emacs has a theme or color-scheme, make sure its loaded
-  > before you load nano-faces so that its colors are used by nano.
+  > This module defines the fundamental colors of nano theme. If your Emacs has a theme or color-scheme, make sure its loaded before you load nano-faces so that its colors are used by nano.
 
 - **[nano-faces.el](./nano-faces.el)**
 
-  > This module defines the fundamental faces of nano theme.
-  > If your Emacs has a theme or color-scheme, make sure its loaded
-  > before you load nano-faces so that its colors are used by nano.
+  > This module defines the fundamental faces of nano theme. If your Emacs has a theme or color-scheme, make sure its loaded before you load nano-faces so that its colors are used by nano.
 
 #### Optional
 
 - **[nano-theme-light.el](./nano-theme-light.el)** &
   **[nano-theme-dark.el](./nano-theme-dark.el)**
 
-  > Theses modules define light and dark themes respectively by
-  > overriding the base colors. If your Emacs is not themed, you are
-  > encouraged to try one of these.
+  > Theses modules define light and dark themes respectively by overriding the base colors. If your Emacs is not themed, you are encouraged to try one of these.
 
 - **[nano-theme.el](./nano-theme.el)**
 
-  > This module derives faces for several popular emacs modes from the
-  > nano faces. You can either use them all by calling
-  > `(nano-theme)`, or pick what you want by calling your selection
-  > of `(nano-theme--` functions.
+  > This module derives faces for several popular emacs modes from the nano faces. You can either use them all by calling `(nano-theme)`, or pick what you want by calling your selection of `(nano-theme--` functions.
 
 - **[nano-help.el](./nano-help.el)**
 
-  > This module provides a function to display a small help message in
-  > the echo area.
+  > This module provides a function to display a small help message in the echo area.
 
 - **[nano-splash.el](./nano-splash.el)**
 
@@ -144,13 +132,11 @@ Because of the way nano-emacs is set up, you need to set these variables /before
 
 - **[nano-modeline.el](./nano-modeline.el)**
 
-  > This module defines a header line that is mode dependent and takes
-  > care of hiding the modeline when necessary.
+  > This module defines a header line that is mode dependent and takes care of hiding the modeline when necessary.
 
 - **[nano-layout.el](./nano-layout.el)**
 
-  > This module defines the overall layout of an emacs frame, defining
-  > default font, fringes, margins, etc.
+  > This module defines the overall layout of an emacs frame, defining default font, fringes, margins, etc.
 
 - **[nano-defaults.el](./nano-defaults.el)**
 
@@ -158,27 +144,19 @@ Because of the way nano-emacs is set up, you need to set these variables /before
 
 - **[nano-session.el](./nano-session.el)**
 
-  > This modules configures Emacs such that a session is saved from
-  > one run to the other.
+  > This modules configures Emacs such that a session is saved from one run to the other.
 
 - **[nano-bindings.el](./nano-bindings.el)**
 
-  > This modules provides a reduced set of keybindings for a few
-  > common commands.
+  > This modules provides a reduced set of keybindings for a few common commands.
 
 - **[nano-counsel.el](./nano-counsel.el)**
 
-  > This modules configures the [counsel
-  > package](https://elpa.gnu.org/packages/counsel.html) that needs to
-  > have been **installed** by user.
+  > This modules configures the [counsel package](https://elpa.gnu.org/packages/counsel.html) that needs to have been **installed** by user.
 
 - **[nano-colors.el](./nano-colors.el)**
 
-  > This module provides a collection of colors palettes
-  > ([open colors](https://yeun.github.io/open-color/),
-  > [material colors](https://material.io/),
-  > [nord colors](https://www.nordtheme.com/))
-  > with functions for easily accessing them.
+  > This module provides a collection of colors palettes ([open colors](https://yeun.github.io/open-color/), [material colors](https://material.io/), [nord colors](https://www.nordtheme.com/)) with functions for easily accessing them.
 
 #### Experimental
 
@@ -199,17 +177,13 @@ Because of the way nano-emacs is set up, you need to set these variables /before
 
 - **[nano-command.el](./nano-command.el)**
 
-  > This package provides an experimental command line prompt in the
-  > header line. It has not history nor completion but can be used for
-  > one line input such as org-capture.
+  > This package provides an experimental command line prompt in the header line. It has not history nor completion but can be used for one line input such as org-capture.
 
   ![](./images/nano-command.png)
 
 - **[nano-agenda.el](./nano-agenda.el)**
 
-  > An experimental interactive mini agenda that displays side by
-  > side a mini calendar on the left and timestamped org entries on
-  > the right.
+  > An experimental interactive mini agenda that displays side by side a mini calendar on the left and timestamped org entries on the right.
 
   ![](./images/nano-agenda.png)
 
