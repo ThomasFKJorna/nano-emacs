@@ -48,45 +48,74 @@ through the [straight.el](https://github.com/raxod502/straight.el) package
 manager.
 
 #### Manual Installation
+
 To merge the [nano.el](nano.el) contents with your emacs configuration,
 you'll need to modify the `load-path` to include the nano emacs repository
 and then call for the different modules. The only mandatory module is
 `nano-faces` that defines 6 faces that are used in other modules.
 
 #### Installation through straight.el
+
 To install nano through [straight.el](https://github.com/raxod502/straight.el),
 install straight.el, and then add the following snippet into your emacs
 configuration:
-```
+
+```emacs-lisp
 (straight-use-package
   '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
 ```
+
 from here, you may either `(require 'nano)` to pull in the default nano
 configuration, or call for the different modules. The only mandatory module
 is `nano-faces` that defines 6 faces that are used in other modules.
+
+### Customization
+
+You can customize the default font, the proportional font and the font-size.
+
+```emacs-lisp
+(setq nano-font-family-monospaced "Roboto Mono")
+```
+
+This sets the default monospaced font. Defaults to Roboto Mono. Note that if you set this to a font without proper light or bold weights you will lose many of the key design features of nano-emacs.
+
+```emacs-lisp
+(setq nano-font-family-proportional nil)
+```
+
+Set this to the name of your favorite variable-width font to enable `variable-width-mode` and `mixed-pitch-mode`. If you have already set this somewhere else, you can use `(setq nano-font-family-proportional (face-attribute 'variable-width :family))` to use the same one.
+
+```emacs-lisp
+(setq nano-font-size 14)
+```
+
+This sets the font-size of most faces in nano-emacs.
+
+#### Note about load-order
+
+Because of the way nano-emacs is set up, you need to set these variables /before/ you call `(nano-faces)` and `(nano-theme)`. If you change one of these variables after load/calling `(nano-faces)` and `(nano-theme)`, you will need to call them again for these changes to take effect.
 
 ### Modules
 
 - **[nano.el](./nano.el)** (optional)
 
   > This module is mostly used to test nano emacs locally. Its content
-    is supposed to be merged into an existing emacs configuration. See
-    [Quick test](#Quick-test) section above.
+  > is supposed to be merged into an existing emacs configuration. See
+  > [Quick test](#Quick-test) section above.
 
 #### Mandatory
 
-* **[nano-base-colors.el](./nano-base-colors.el)**
+- **[nano-base-colors.el](./nano-base-colors.el)**
 
   > This module defines the fundamental colors of nano theme.
-    If your Emacs has a theme or color-scheme, make sure its loaded
-    before you load nano-faces so that its colors are used by nano.
+  > If your Emacs has a theme or color-scheme, make sure its loaded
+  > before you load nano-faces so that its colors are used by nano.
 
-* **[nano-faces.el](./nano-faces.el)**
+- **[nano-faces.el](./nano-faces.el)**
 
   > This module defines the fundamental faces of nano theme.
-    If your Emacs has a theme or color-scheme, make sure its loaded
-    before you load nano-faces so that its colors are used by nano.
-
+  > If your Emacs has a theme or color-scheme, make sure its loaded
+  > before you load nano-faces so that its colors are used by nano.
 
 #### Optional
 
@@ -94,21 +123,20 @@ is `nano-faces` that defines 6 faces that are used in other modules.
   **[nano-theme-dark.el](./nano-theme-dark.el)**
 
   > Theses modules define light and dark themes respectively by
-    overriding the base colors. If your Emacs is not themed, you are
-    encouraged to try one of these.
+  > overriding the base colors. If your Emacs is not themed, you are
+  > encouraged to try one of these.
 
 - **[nano-theme.el](./nano-theme.el)**
 
   > This module derives faces for several popular emacs modes from the
-    nano faces. You can either use them all by calling
-    `(nano-theme)`, or pick what you want by calling your selection
-    of `(nano-theme--` functions.
-
+  > nano faces. You can either use them all by calling
+  > `(nano-theme)`, or pick what you want by calling your selection
+  > of `(nano-theme--` functions.
 
 - **[nano-help.el](./nano-help.el)**
 
   > This module provides a function to display a small help message in
-    the echo area.
+  > the echo area.
 
 - **[nano-splash.el](./nano-splash.el)**
 
@@ -117,12 +145,12 @@ is `nano-faces` that defines 6 faces that are used in other modules.
 - **[nano-modeline.el](./nano-modeline.el)**
 
   > This module defines a header line that is mode dependent and takes
-    care of hiding the modeline when necessary.
+  > care of hiding the modeline when necessary.
 
 - **[nano-layout.el](./nano-layout.el)**
 
   > This module defines the overall layout of an emacs frame, defining
-    default font, fringes, margins, etc.
+  > default font, fringes, margins, etc.
 
 - **[nano-defaults.el](./nano-defaults.el)**
 
@@ -131,44 +159,43 @@ is `nano-faces` that defines 6 faces that are used in other modules.
 - **[nano-session.el](./nano-session.el)**
 
   > This modules configures Emacs such that a session is saved from
-    one run to the other.
+  > one run to the other.
 
 - **[nano-bindings.el](./nano-bindings.el)**
 
   > This modules provides a reduced set of keybindings for a few
-    common commands.
+  > common commands.
 
 - **[nano-counsel.el](./nano-counsel.el)**
 
   > This modules configures the [counsel
-    package](https://elpa.gnu.org/packages/counsel.html) that needs to
-    have been **installed** by user.
+  > package](https://elpa.gnu.org/packages/counsel.html) that needs to
+  > have been **installed** by user.
 
 - **[nano-colors.el](./nano-colors.el)**
 
   > This module provides a collection of colors palettes
-    ([open colors](https://yeun.github.io/open-color/),
-     [material colors](https://material.io/),
-     [nord colors](https://www.nordtheme.com/))
-    with functions for easily accessing them.
+  > ([open colors](https://yeun.github.io/open-color/),
+  > [material colors](https://material.io/),
+  > [nord colors](https://www.nordtheme.com/))
+  > with functions for easily accessing them.
 
 #### Experimental
 
 - **[nano-mu4e.el](./nano-mu4e.el)**
 
   > This package setup the look and feel of mu4e.
-  
+
   ![](./images/nano-mu4e.png)
 
 - **[nano-minibuffer.el](./nano-minibuffer.el)**
 
   > Minibuffer using [mini-frame](https://github.com/muffinmad/emacs-mini-frame)
-  
+
   <div>
   <img src="./images/nano-minibuffer-light.png" width=47.5%>
   <img src="./images/nano-minibuffer-dark.png"  width=47.5%>
   </div>
-
 
 - **[nano-command.el](./nano-command.el)**
 
@@ -178,13 +205,12 @@ is `nano-faces` that defines 6 faces that are used in other modules.
 
   ![](./images/nano-command.png)
 
-
 - **[nano-agenda.el](./nano-agenda.el)**
 
   > An experimental interactive mini agenda that displays side by
   > side a mini calendar on the left and timestamped org entries on
   > the right.
-  
+
   ![](./images/nano-agenda.png)
 
 ### Related works
@@ -192,4 +218,3 @@ is `nano-faces` that defines 6 faces that are used in other modules.
 - [Bespoke theme](https://github.com/mclear-tools/bespoke-themes)
   Custom medium contrast light and dark themes inspired by nano emacs,
   elegant emacs, Nord and Solarized themes.
-  
